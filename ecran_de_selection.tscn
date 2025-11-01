@@ -1,0 +1,248 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcq40c0ehsdky"]
+
+[ext_resource type="Script" uid="uid://c6871vtfwbcby" path="res://ecran_de_selection.gd" id="1_3xtb0"]
+[ext_resource type="PackedScene" uid="uid://ls5h7qr137h" path="res://transition.tscn" id="1_mmhqr"]
+[ext_resource type="AudioStream" uid="uid://25rp6k7nu4v" path="res://Sounds/ROULEZ JEUNESSE !.mp3" id="7_qioum"]
+
+[sub_resource type="Animation" id="Animation_n10gj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(65, -985)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(65, -410)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(65, 115)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(65, 640)]
+}
+
+[sub_resource type="Animation" id="Animation_3xtb0"]
+resource_name = "Selection"
+length = 3.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.501, 0.625, 0.75, 0.875, 1, 1.001, 1.125, 1.25, 1.375, 1.5, 1.501, 1.625, 1.75, 1.875, 2, 2.001, 2.125, 2.25, 2.375, 2.5, 2.501, 2.625, 2.75, 2.875, 3, 3.001, 3.125),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1215), Vector2(65, -985), Vector2(65, -1035)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.376, 0.5, 0.625, 0.75, 0.875, 0.876, 1, 1.125, 1.25, 1.375, 1.376, 1.5, 1.625, 1.75, 1.875, 1.876, 2, 2.125, 2.25, 2.375, 2.376, 2.5, 2.625, 2.75, 2.875, 2.876, 3, 3.125),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -360), Vector2(65, -460)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.251, 0.375, 0.5, 0.625, 0.75, 0.751, 0.875, 1, 1.125, 1.25, 1.251, 1.375, 1.5, 1.625, 1.75, 1.751, 1.875, 2, 2.125, 2.25, 2.251, 2.375, 2.5, 2.625, 2.75, 2.751, 2.875, 3, 3.125),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 165), Vector2(65, 65)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.126, 0.25, 0.375, 0.5, 0.625, 0.626, 0.75, 0.875, 1, 1.125, 1.126, 1.25, 1.375, 1.5, 1.625, 1.626, 1.75, 1.875, 2, 2.125, 2.126, 2.25, 2.375, 2.5, 2.625, 2.626, 2.75, 2.875, 3, 3.125),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 590), Vector2(65, 1115), Vector2(65, -985), Vector2(65, -460), Vector2(65, 65), Vector2(65, 690), Vector2(65, 590)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gehk8"]
+_data = {
+&"RESET": SubResource("Animation_n10gj"),
+&"Selection": SubResource("Animation_3xtb0")
+}
+
+[node name="Ecran de selection" type="Node2D"]
+scale = Vector2(1.1988704, 1.5925103)
+script = ExtResource("1_3xtb0")
+
+[node name="Miniatures" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Miniatures"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -985.0
+offset_right = 105.0
+offset_bottom = -945.0
+scale = Vector2(25.4972, 13.1255)
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="Miniatures"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -410.0
+offset_right = 105.0
+offset_bottom = -370.0
+scale = Vector2(25.4972, 13.1255)
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="Miniatures"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 115.0
+offset_right = 105.0
+offset_bottom = 155.0
+scale = Vector2(25.4972, 13.1255)
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect4" type="TextureRect" parent="Miniatures"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 640.0
+offset_right = 105.0
+offset_bottom = 680.0
+scale = Vector2(25.4972, 13.1255)
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Miniatures"]
+libraries = {
+&"": SubResource("AnimationLibrary_gehk8")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="Miniatures"]
+
+[node name="Bordure" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Bordure"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.7
+offset_right = 35.0
+offset_bottom = 650.0
+color = Color(0, 0.320183, 0.64163, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Bordure"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.725
+anchor_right = -0.075
+offset_left = 1115.0
+offset_right = 1150.0
+offset_bottom = 650.0
+scale = Vector2(1.12, 1)
+color = Color(0, 0.320183, 0.64163, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect7" type="ColorRect" parent="Bordure"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.425
+anchor_top = -1.2
+anchor_right = 0.425
+anchor_bottom = 2.8
+offset_left = 13.0
+offset_top = 5.0
+offset_right = 48.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect8" type="ColorRect" parent="Bordure"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.425
+anchor_top = -0.525
+anchor_right = 0.425
+anchor_bottom = 2.65
+offset_left = 1068.0
+offset_top = 5.0
+offset_right = 1103.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Transition" parent="." instance=ExtResource("1_mmhqr")]
+visible = false
+
+[node name="Timer" type="Timer" parent="Transition"]
+wait_time = 0.2
+
+[node name="Selection" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Starting" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_qioum")
+autoplay = true
+
+[connection signal="timeout" from="Transition/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Selection" to="." method="_on_selection_timeout"]
+[connection signal="timeout" from="Starting" to="." method="_on_starting_timeout"]

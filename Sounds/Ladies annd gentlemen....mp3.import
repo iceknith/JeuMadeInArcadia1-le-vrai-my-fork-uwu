@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6aet20lgbfb7"
+path="res://.godot/imported/Ladies annd gentlemen....mp3-0aa8fd392454ac6b71f1f2498d842300.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Ladies annd gentlemen....mp3"
+dest_files=["res://.godot/imported/Ladies annd gentlemen....mp3-0aa8fd392454ac6b71f1f2498d842300.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

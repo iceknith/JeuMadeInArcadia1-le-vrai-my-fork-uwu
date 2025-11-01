@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://25rp6k7nu4v"
+path="res://.godot/imported/ROULEZ JEUNESSE !.mp3-0c013eb5f02e1449283e9ea9f98da08d.mp3str"
+
+[deps]
+
+source_file="res://Sounds/ROULEZ JEUNESSE !.mp3"
+dest_files=["res://.godot/imported/ROULEZ JEUNESSE !.mp3-0c013eb5f02e1449283e9ea9f98da08d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

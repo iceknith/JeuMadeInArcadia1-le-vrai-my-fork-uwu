@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://bslryk8ovx5gc"]
+
+[ext_resource type="Script" uid="uid://7vofn2nxb3l8" path="res://ecran_titre.gd" id="1_cjri6"]
+[ext_resource type="PackedScene" uid="uid://ls5h7qr137h" path="res://transition.tscn" id="2_4ppeh"]
+[ext_resource type="Script" uid="uid://do87se8d5tovj" path="res://transition.gd" id="2_l1fsh"]
+[ext_resource type="AudioStream" uid="uid://b6aet20lgbfb7" path="res://Sounds/Ladies annd gentlemen....mp3" id="4_fochm"]
+[ext_resource type="AudioStream" uid="uid://eub1trdtvgbh" path="res://OST/Arclash !.mp3" id="5_qggtv"]
+
+[node name="Ecran Titre" type="Node2D"]
+script = ExtResource("1_cjri6")
+
+[node name="Gestionnaire des boutons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Joueur 1" type="Button" parent="Gestionnaire des boutons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.425
+anchor_top = 10.3
+anchor_right = 14.425
+anchor_bottom = 10.3
+offset_left = -477.0
+offset_top = 538.0
+offset_right = -202.0
+offset_bottom = 578.0
+text = "Joueur 1
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Joueur 2" type="Button" parent="Gestionnaire des boutons"]
+layout_mode = 0
+offset_left = 999.0
+offset_top = 950.0
+offset_right = 1274.0
+offset_bottom = 990.0
+text = "Joueur 2
+"
+
+[node name="Transition" parent="." instance=ExtResource("2_4ppeh")]
+visible = false
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 1157.0
+offset_bottom = 649.0
+script = ExtResource("2_l1fsh")
+
+[node name="Timer de transition" type="Timer" parent="Transition"]
+wait_time = 0.2
+
+[node name="Opening" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fochm")
+autoplay = true
+parameters/looping = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qggtv")
+parameters/looping = false
+
+[connection signal="pressed" from="Gestionnaire des boutons/Joueur 1" to="." method="_on_joueur_1_pressed"]
+[connection signal="pressed" from="Gestionnaire des boutons/Joueur 2" to="." method="_on_joueur_2_pressed"]
+[connection signal="timeout" from="Transition/Timer de transition" to="." method="_on_timer_de_transition_timeout"]
+[connection signal="finished" from="Opening" to="." method="_on_opening_finished"]
