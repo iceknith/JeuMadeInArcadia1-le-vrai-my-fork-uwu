@@ -1,12 +1,11 @@
 extends Node2D
 
-var GameManager = get_parent()
+@onready var GameManager = get_parent()
 var P1_ready : bool = false
 var P2_ready : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print_tree_pretty()
 	P1_ready = false
 	P2_ready = false
 
@@ -45,3 +44,4 @@ func _on_joueur_2_pressed() -> void:
 
 func _on_timer_de_transition_timeout() -> void:
 	GameManager.next(true)
+	#Preferer les signaux

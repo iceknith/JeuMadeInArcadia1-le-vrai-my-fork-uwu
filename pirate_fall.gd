@@ -1,6 +1,6 @@
-class_name GameUtilities extends Node
+extends GameUtilities
 
-signal end_game(player1_win:bool)
+@onready var GameManager = get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,7 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-# Echange avec ecran de selection
-# 
+	if Input.is_action_just_pressed("Bouton HautGauche P1"):
+		p1_win = false
+	
+	if game_finished:
+		GameManager.MinigameResults(end_game)                          

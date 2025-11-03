@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bcq40c0ehsdky"]
 
-[ext_resource type="Script" uid="uid://c6871vtfwbcby" path="res://ecran_de_selection.gd" id="1_3xtb0"]
-[ext_resource type="PackedScene" uid="uid://ls5h7qr137h" path="res://transition.tscn" id="1_mmhqr"]
+[ext_resource type="Script" uid="uid://bvhppyk3xw0qr" path="res://ecran_de_selection.gd" id="1_3xtb0"]
+[ext_resource type="PackedScene" path="res://Assets/transition.tscn" id="2_n10gj"]
 [ext_resource type="AudioStream" uid="uid://25rp6k7nu4v" path="res://Sounds/ROULEZ JEUNESSE !.mp3" id="7_qioum"]
 
 [sub_resource type="Animation" id="Animation_n10gj"]
@@ -227,8 +227,7 @@ offset_bottom = 600.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Transition" parent="." instance=ExtResource("1_mmhqr")]
-visible = false
+[node name="Transition" parent="." instance=ExtResource("2_n10gj")]
 
 [node name="Timer" type="Timer" parent="Transition"]
 wait_time = 0.2

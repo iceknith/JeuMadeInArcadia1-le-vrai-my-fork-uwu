@@ -1,11 +1,15 @@
 extends Node
 
 # LISTE DES MINIJEUX DU JEU
-var Minijeux = []
+var minijeux = []
+var mj_disponibles
 var dir = DirAccess.open("res://Minigames")
 
 # ETAT DE LA PARTIE
-var Etat = ""
+var etat = ""
+var p1_victory = 0
+var p2_victory = 0
+var nb_manche = 9
 
 func _init() -> void:
 	var folders = dir.get_directories()
@@ -24,35 +28,80 @@ func _init() -> void:
 					preview_image = file
 			#VERFICATION DES ELEMENTS DEMANDES
 			if scene != "" and preview_image != "":
-				Minijeux.append([scene,load("res://Minigames/" + folder + "/" + preview_image),folder])
+				minijeux.append([scene,load("res://Minigames/" + folder + "/" + preview_image),folder])
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var MJ_disponibles = Minijeux
+	mj_disponibles = minijeux
 	
-	var scene = load("res://ecran_titre.tscn")
+	var scene = load("res://GameStructure/ecran_titre.tscn")
 	var instance = scene.instantiate()
 	add_child(instance)
-
-func next(conditions) -> void:
+	etat = "Menu"
+	
+func next(conditions,chemin = null) -> void:
+	
 	if conditions:
-		if Etat == "" or Etat == "FinJeu":
-			# RETOUR AU MENU
-			var scene = load("res://ecran_titre.tscn")
-			var instance = scene.instantiate()
-			add_child(instance)
-			
-			# CHANGEMENT D'ETAT
-			Etat = "Menu"
+		# RETRAIT DE LA SCENE ACTUELLE
+		var enfant = get_child(0)
+		enfant.queue_free()
 		
-		elif Etat == "Menu":
+		if etat == "FinJeu":
+			
 			# RETOUR AU MENU
-			var scene = load("res://ecran_de_selection.tscn")
+			var scene = load("res://GameStructure/ecran_titre.tscn")
 			var instance = scene.instantiate()
 			add_child(instance)
 			
 			# CHANGEMENT D'ETAT
-			Etat = "Selection"
+			etat = "Menu"
+		
+		elif etat == "Menu" or etat == "FinManche":
+			# RETOUR AU MENU
+			var scene = load("res://GameStructure/ecran_de_selection.tscn")
+			var instance = scene.instantiate()
+			instance.miniature = mj_disponibles
+			add_child(instance)
+			
+			# CHANGEMENT D'ETAT
+			etat = "Selection"
+			
+		elif etat == "Selection":
+			# RETOUR AU MENU
+			var scene = load(chemin)
+			var instance = scene.instantiate()
+			add_child(instance)
+			
+			# CHANGEMENT D'ETAT
+			etat = "Minijeu"
+			
+		elif etat == "Minijeu" and (p1_victory > nb_manche/2 or p2_victory > nb_manche/2):
+			# RETOUR AU MENU
+			var scene = load("res://GameStructure/podium.tscn")
+			var instance = scene.instantiate()
+			add_child(instance)
+			
+			# CHANGEMENT D'ETAT
+			etat = "FinJeu"
+			
+		elif etat == "Minijeu" and p1_victory < nb_manche/2 and p2_victory < nb_manche/2:
+			# RETOUR AU MENU
+			var scene = load("res://GameStructure/vinqueur.tscn")
+			var instance = scene.instantiate()
+			add_child(instance)
+			
+			# CHANGEMENT D'ETAT
+			etat = "FinManche"
 
-func minigame_selected(minigame) -> void:
-	pass
+# LANCE LE MINIJEU ET LE RETIRE DE LA LISTE DES MINIJEUX DISPONIBLES 
+func MinigameSelected(minigame,image,folder) -> void:
+	mj_disponibles.erase([minigame,image,folder])
+	next(true,"res://Minigames/" + folder + "/" + minigame)
+
+func MinigameResults(result) -> void:
+	if result:
+		p1_victory += 1
+	else:
+		p2_victory += 1
+		
+	next(true)

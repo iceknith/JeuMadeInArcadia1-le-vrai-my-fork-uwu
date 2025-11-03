@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bslryk8ovx5gc"]
+[gd_scene load_steps=5 format=3 uid="uid://bslryk8ovx5gc"]
 
-[ext_resource type="Script" uid="uid://7vofn2nxb3l8" path="res://ecran_titre.gd" id="1_cjri6"]
-[ext_resource type="PackedScene" uid="uid://ls5h7qr137h" path="res://transition.tscn" id="2_4ppeh"]
-[ext_resource type="Script" uid="uid://do87se8d5tovj" path="res://transition.gd" id="2_l1fsh"]
+[ext_resource type="Script" uid="uid://c2hunniux018w" path="res://ecran_titre.gd" id="1_cjri6"]
+[ext_resource type="PackedScene" path="res://Assets/transition.tscn" id="2_muui3"]
 [ext_resource type="AudioStream" uid="uid://b6aet20lgbfb7" path="res://Sounds/Ladies annd gentlemen....mp3" id="4_fochm"]
 [ext_resource type="AudioStream" uid="uid://eub1trdtvgbh" path="res://OST/Arclash !.mp3" id="5_qggtv"]
 
@@ -39,13 +38,7 @@ offset_bottom = 990.0
 text = "Joueur 2
 "
 
-[node name="Transition" parent="." instance=ExtResource("2_4ppeh")]
-visible = false
-offset_left = 2.0
-offset_top = -1.0
-offset_right = 1157.0
-offset_bottom = 649.0
-script = ExtResource("2_l1fsh")
+[node name="Transition" parent="." instance=ExtResource("2_muui3")]
 
 [node name="Timer de transition" type="Timer" parent="Transition"]
 wait_time = 0.2

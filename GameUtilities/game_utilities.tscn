@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://du8n473tknlxu"]
+
+[ext_resource type="Script" uid="uid://bosoocnjm1hve" path="res://GameUtilities/game_utilities.gd" id="1_foxqv"]
+
+[node name="GameUtilities" type="Node"]
+script = ExtResource("1_foxqv")
+
+[node name="Timer" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Temps :
+0.0"
+horizontal_alignment = 2

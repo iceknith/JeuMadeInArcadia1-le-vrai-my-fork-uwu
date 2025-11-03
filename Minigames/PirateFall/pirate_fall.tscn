@@ -1,21 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://biwxcbdms640v"]
+[gd_scene load_steps=2 format=3 uid="uid://biwxcbdms640v"]
 
-[ext_resource type="PackedScene" uid="uid://b2j23usg7b5n7" path="res://Minigames/PirateFall/Utilities/character_body_2d.tscn" id="1_nqilg"]
-[ext_resource type="Texture2D" uid="uid://b5grjhsc1dtvh" path="res://Minigames/PirateFall/pirate_fall_preview.jpg" id="2_o78mv"]
-[ext_resource type="AudioStream" uid="uid://btoyu2h6qefm7" path="res://Minigames/PirateFall/OST/A_Crew_Shanty.mp3" id="3_wvcol"]
+[ext_resource type="Script" uid="uid://dapk7d64018ec" path="res://pirate_fall.gd" id="1_nqilg"]
 
-[node name="PirateFall" type="Node2D"]
-
-[node name="Players" type="Node2D" parent="."]
-
-[node name="CharacterBody2D" parent="Players" instance=ExtResource("1_nqilg")]
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1420.0
-offset_bottom = 1063.0
-texture = ExtResource("2_o78mv")
-expand_mode = 1
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_wvcol")
-autoplay = true
+[node name="pirate_fall" type="Node"]
+script = ExtResource("1_nqilg")
+metadata/_custom_type_script = "uid://bosoocnjm1hve"
