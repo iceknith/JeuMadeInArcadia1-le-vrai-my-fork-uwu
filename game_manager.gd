@@ -87,8 +87,12 @@ func next(conditions,chemin = null) -> void:
 		elif etat == "Minijeu" and p1_victory < nb_manche/2 and p2_victory < nb_manche/2:
 			# RETOUR AU MENU
 			var scene = load("res://GameStructure/vinqueur.tscn")
-			var instance = scene.instantiate()
+			var instance:GameUtilities = scene.instantiate()
 			add_child(instance)
+			
+			# Connexion du signal de fin de partie
+			# Donc une fois que la fin de partie sera atteinte, MinigameResults sera appelée.
+			instance.end_game.connect(MinigameResults)
 			
 			# CHANGEMENT D'ETAT
 			etat = "FinManche"
