@@ -63,13 +63,19 @@ func next(conditions,chemin = null) -> void:
 			instance.miniature = mj_disponibles
 			add_child(instance)
 			
+			# TODO changer la liste des mj_disponibles
+			
 			# CHANGEMENT D'ETAT
 			etat = "Selection"
 			
 		elif etat == "Selection":
 			# RETOUR AU MENU
 			var scene = load(chemin)
-			var instance = scene.instantiate()
+			var instance:GameUtilities = scene.instantiate()
+			
+			# Connexion du signal de fin de partie
+			# Donc une fois que la fin de partie sera atteinte, MinigameResults sera appelée.
+			instance.end_game.connect(MinigameResults)
 			add_child(instance)
 			
 			# CHANGEMENT D'ETAT
@@ -87,12 +93,8 @@ func next(conditions,chemin = null) -> void:
 		elif etat == "Minijeu" and p1_victory < nb_manche/2 and p2_victory < nb_manche/2:
 			# RETOUR AU MENU
 			var scene = load("res://GameStructure/vainqueur.tscn")
-			var instance:GameUtilities = scene.instantiate()
+			var instance = scene.instantiate()
 			add_child(instance)
-			
-			# Connexion du signal de fin de partie
-			# Donc une fois que la fin de partie sera atteinte, MinigameResults sera appelée.
-			instance.end_game.connect(MinigameResults)
 			
 			# CHANGEMENT D'ETAT
 			etat = "FinManche"

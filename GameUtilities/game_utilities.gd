@@ -1,6 +1,7 @@
 class_name GameUtilities extends Node
 
 signal end_game(player1_win:bool)
+signal end_game_early()
 
 @export_category("Timers")
 @export var regle : float = 5.0
@@ -46,6 +47,8 @@ func _ready() -> void:
 	
 	timer_regle.start()
 	print("Voici les règles")
+	
+	end_game_early.connect(jeu_timeout)
 	timer_regle.timeout.connect(regle_timeout)
 
 func _process(delta: float) -> void:
@@ -94,4 +97,7 @@ func fin_timeout() -> void:
 	
 func _on_transition_timer_timeout() -> void:
 	game_finished = true
-	end_game.emit(p1_win)
+	end_game.emit(get_winner())
+
+func get_winner() -> bool:
+	return true

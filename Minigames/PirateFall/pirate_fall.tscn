@@ -6,6 +6,9 @@
 
 [node name="pirate_fall" instance=ExtResource("1_o78mv")]
 script = ExtResource("2_wvcol")
+regle = null
+jeu = null
+fin = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
 stream = ExtResource("2_o78mv")
