@@ -1,16 +1,16 @@
 extends Node2D
 
-
-@onready var GameManager = get_parent()
 #SELECTION = TEXTURE_RECT4
 var miniature = []
-var choiced_array1 = miniature.pick_random()
 var select = false
 var tick : int = 0
 var w : float = -985.0
 var x : float = -460.0
 var y : float = 65.0
 var z : float = 590.0
+
+@onready var GameManager = get_parent()
+@onready var choiced_array1 = miniature.pick_random()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,7 +21,6 @@ func _ready() -> void:
 	$Miniatures/TextureRect3.set_position(Vector2(65,x))
 	$Miniatures/TextureRect2.set_position(Vector2(65,y))
 	$Miniatures/TextureRect.set_position(Vector2(65,z))
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -88,13 +87,11 @@ func _process(delta: float) -> void:
 			if tick == 20:
 				$Starting.start()
 				tick += 1
-	
 
 func _on_starting_timeout() -> void:
 	$Transition.show()
 	$Transition/Timer.start()
 	$Transition/AnimationPlayer.play("fondu_entre")
-
 
 func _on_timer_timeout() -> void:
 	GameManager.MinigameSelected(choiced_array1[0],choiced_array1[1],choiced_array1[2])

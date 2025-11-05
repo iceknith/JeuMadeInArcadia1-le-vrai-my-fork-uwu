@@ -1,27 +1,19 @@
 extends GameUtilities
 
-@onready var GameManager = get_parent()
-
 func _ready() -> void:
+	# Appelle la fonciton _ready() de GameUtilities, cette ligne est tres importante
 	super()
-	# On peut connecter le end_game directement ici !
-	connect("end_game", _on_end_game)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# Appelle la fonction _process(delta) de GameUtilities, cette ligne est très importante
 	super(delta)
 	
-	if Input.is_action_just_pressed("Bouton HautGauche P1"):
-		p1_win = false
-	
-	# ALors, ça c'est pas super super
-	# Globalement, un signal tu va essayer de le connecter au début du programme,
-	# Là tu fait ce check chaque frame
-	# Alors que, par définition un signal va juste executer ta fonction dès que le jeu est fini
-	#if game_finished:
-	#	connect("end_game", _on_end_game)
-
-func _on_end_game(player1_win: bool):
-	# Au final ça fait pas grand chose, mais tkt ^^
-	print("partie finie")
-	#GameManager.MinigameResults(player1_win)
+	if game_started:
+		# Votre boucle de jeu
+		# Mettez votre logique de jeu ici !
+		
+		# Votre condition de victoire
+		if Input.is_action_just_pressed("Bouton HautGauche P1"):
+			# Emmettre end_game signalera la fin de votre jeu
+			# L'argument est true si le joueur1 as gagné, et false si le joueur2 as gagné.
+			end_game.emit(false)

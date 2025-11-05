@@ -1,7 +1,7 @@
 extends Node
 
 # LISTE DES MINIJEUX DU JEU
-var minijeux = []
+var minijeux = [] # TODO faire un truc pour selectionner les minijeux disponnibles !!!
 var mj_disponibles
 var dir = DirAccess.open("res://Minigames")
 
@@ -86,7 +86,7 @@ func next(conditions,chemin = null) -> void:
 			
 		elif etat == "Minijeu" and p1_victory < nb_manche/2 and p2_victory < nb_manche/2:
 			# RETOUR AU MENU
-			var scene = load("res://GameStructure/vinqueur.tscn")
+			var scene = load("res://GameStructure/vainqueur.tscn")
 			var instance:GameUtilities = scene.instantiate()
 			add_child(instance)
 			
